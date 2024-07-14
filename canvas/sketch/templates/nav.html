@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.css' %}">
+    <title>Document</title>
+    <style>
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 56px); /* 56px is the height of the navbar */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand container ml-10" href="#">
+            <img src="https://1000logos.net/wp-content/uploads/2022/08/Myntra-Logo.png" width="200" height="80" class="d-inline-block align-top" alt="Logo">
+        </a>
+        <div class="collapse navbar-collapse justify-content-between">
+            <form action="/sketchpage/" method="post" class="form-inline">
+                {% csrf_token %}
+                <button type="submit" name="canvabtn" class="btn btn-primary btn-lg">CHECK DESIGN</button>
+            </form>
+        </div>
+    </nav>
+    <div class="content fw-lighter">
+        <h3>Other myntra content here</h3>
+    </div>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+</body>
+</html>
